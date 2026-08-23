@@ -3,3 +3,6 @@
 
 # Generated PDF preview images are local review artifacts.
 /tmp/pdfs/assignment2/
+
+# Temporary Microsoft Office lock files.
+~$*
