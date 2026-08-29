@@ -38,12 +38,13 @@ on the `assignment-3-ga` branch.
 
 The Assignment 3 controller now follows the complete 110-byte crossover shown
 in the assignment example, keeps both child orientations, and retains the
-starter's 10% random-new (`MR_count`) group alongside 10% elitism. Fitness also
-records the closest food distance reached during a run, while actual food
-contacts remain visible in `generation_stats.csv`. The controller clears
-PySimbot's geometry sensor caches between generations, preventing long-run
-memory growth. GA operators are stochastic, so eater counts and fitness can
-vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-3-ga/asm-3_PyGASimbot/LOGIC_DESIGN.md) and
+starter's 10% random-new (`MR_count`) group alongside 10% elitism. Fuzzy
+actions are normalized by active rule strength, and a deterministic sensor-based
+recovery handles blocked/zero-step moves. Fitness also records the closest food
+distance reached during a run, while actual food contacts remain visible in
+`generation_stats.csv`. The controller clears PySimbot's geometry sensor caches
+between generations, preventing long-run memory growth. GA operators are
+stochastic, so eater counts and fitness can vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-3-ga/asm-3_PyGASimbot/LOGIC_DESIGN.md) and
 `generation_stats.csv` to compare runs.
 
 ## Repository convention
