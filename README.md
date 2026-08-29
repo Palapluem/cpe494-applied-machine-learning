@@ -36,6 +36,13 @@ repository](https://github.com/Palapluem/cpe-aml), under
 [`asm-3_PyGASimbot/`](https://github.com/Palapluem/cpe-aml/tree/assignment-3-ga/asm-3_PyGASimbot)
 on the `assignment-3-ga` branch.
 
+A complete validation run reached all 100 generations: maximum fitness rose
+from 348 to 993, with final average fitness 595.65 and peak average 680.18.
+The Assignment 3 controller also clears PySimbot's geometry sensor caches
+between generations, preventing the long-run memory growth that previously
+made the final generation unresponsive. The detailed result and flow are
+documented in the [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-3-ga/asm-3_PyGASimbot/LOGIC_DESIGN.md).
+
 ## Repository convention
 
 - Keep lecture materials and course-level files in this repository.
