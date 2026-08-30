@@ -2,7 +2,7 @@
 /assignment/cpe-aml/
 
 # Generated PDF preview images are local review artifacts.
-/tmp/pdfs/assignment2/
+/tmp/
 
 # Temporary Microsoft Office lock files.
 ~$*
