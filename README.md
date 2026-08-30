@@ -41,9 +41,9 @@ in the assignment example, keeps both child orientations, and retains the
 starter's 10% random-new (`MR_count`) group alongside 10% elitism. Fuzzy
 actions are normalized by active rule strength, and a deterministic sensor-based
 recovery handles blocked/zero-step moves. The food is treated as one fixed goal
-per generation: a robot stops after its centre enters the food rectangle while
-the other robots continue, so each robot can contribute at most one successful
-eat. Fitness also
+per generation: a robot stops after its centre enters the food rectangle and is
+aligned with the target for clear display while the other robots continue, so
+each robot can contribute at most one successful eat. Fitness also
 records the closest food distance reached during a run, while actual food
 contacts remain visible in `generation_stats.csv`. The controller clears
 PySimbot's geometry sensor caches between generations, preventing long-run
