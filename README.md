@@ -9,11 +9,11 @@ Course workspace for **CPE494 Special Topic IV: Applied Machine Learning** (Seme
 | `assignment/Assignment 1/` | Assignment brief and a tracked copy of the Assignment 1 controller. |
 | `assignment/Assignment 2/` | Fuzzy Logic Control (FLC) brief and hint image. |
 | `assignment/Assignment 3/` | Genetic Algorithm (GA) assignment brief. |
-| `assignment/Assignment 4/` | Artificial Life assignment brief (Assignment 4 branch). |
+| `assignment/Assignment 4/` | Artificial Life assignment brief (kept on root `main`). |
 | `assignment/cpe-aml/` | Separate fork of the group-assignment repository; intentionally kept as its own Git repository. |
 | `lecture/Lecture 1_Fuzzy Logic Control/` | Fuzzy-control lecture notes, exercises, and solution references. |
 | `lecture/Lecture 2_Genetic Algorithm/` | Genetic Algorithm lecture notes and reference slides. |
-| `lecture/Lecture 3_Artificial Life/` | Artificial Life lecture notes and slides (Assignment 4 branch). |
+| `lecture/Lecture 3_Artificial Life/` | Artificial Life lecture notes and slides (kept on root `main`). |
 | `tmp/pdfs/` | Local preview images extracted while reviewing PDFs; generated previews are ignored. |
 
 ## Assignment 1: PySimbot
@@ -65,6 +65,23 @@ The nested `cpe-aml` repository remains separate: its `assignment-3-ga` and
 `main` branches contain the GA workspace, while its `assignment-4-alife`
 branch contains `asm-4_PyLifeSimbot`. The root repository's `main` contains
 the course-level Assignment 4 brief and lecture materials listed above.
+
+The Assignment 4 entry point is `asm-4_PyLifeSimbot/assignmentALife.py` in the
+nested repository. Install its platform requirements in the shared virtual
+environment, then run it from that folder:
+
+```powershell
+cd D:\cpe494-applied-machine-learning\assignment\cpe-aml
+git switch assignment-4-alife
+python -m pip install -r .\asm-4_PyLifeSimbot\requirements_windows.txt
+python .\asm-4_PyLifeSimbot\assignmentALife.py
+```
+
+Repository boundaries are intentional: this root repository stores course
+briefs and lecture material directly on `main`; the nested `cpe-aml`
+repository stores runnable assignment work on one branch per assignment. The
+nested repository is ignored by the root `.gitignore`, so commits made in one
+repository cannot silently modify the other.
 
 ## Repository convention
 
