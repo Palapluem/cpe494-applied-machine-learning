@@ -9,9 +9,11 @@ Course workspace for **CPE494 Special Topic IV: Applied Machine Learning** (Seme
 | `assignment/Assignment 1/` | Assignment brief and a tracked copy of the Assignment 1 controller. |
 | `assignment/Assignment 2/` | Fuzzy Logic Control (FLC) brief and hint image. |
 | `assignment/Assignment 3/` | Genetic Algorithm (GA) assignment brief. |
+| `assignment/Assignment 4/` | Artificial Life assignment brief (Assignment 4 branch). |
 | `assignment/cpe-aml/` | Separate fork of the group-assignment repository; intentionally kept as its own Git repository. |
 | `lecture/Lecture 1_Fuzzy Logic Control/` | Fuzzy-control lecture notes, exercises, and solution references. |
 | `lecture/Lecture 2_Genetic Algorithm/` | Genetic Algorithm lecture notes and reference slides. |
+| `lecture/Lecture 3_Artificial Life/` | Artificial Life lecture notes and slides (Assignment 4 branch). |
 | `tmp/pdfs/` | Local preview images extracted while reviewing PDFs; generated previews are ignored. |
 
 ## Assignment 1: PySimbot
@@ -50,6 +52,17 @@ PySimbot's geometry sensor caches between generations, preventing long-run
 memory growth. GA operators are
 stochastic, so eater counts and fitness can vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-3-ga/asm-3_PyGASimbot/LOGIC_DESIGN.md) and
 `generation_stats.csv` to compare runs.
+
+## Assignment 4: Artificial Life
+
+Artificial Life materials are isolated on the `assignment-4-alife` branch:
+
+- assignment brief: `assignment/Assignment 4/AML Assignment 04 ALife 2026.pdf`
+- lecture files: `lecture/Lecture 3_Artificial Life/`
+- PySimbot workspace: `asm-4_PyLifeSimbot/` in the nested `cpe-aml` repository
+
+The GA branch `assignment-3-ga` and the course `main` branch do not contain
+these Assignment 4 files.
 
 ## Repository convention
 
