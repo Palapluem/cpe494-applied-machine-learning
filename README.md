@@ -55,14 +55,16 @@ stochastic, so eater counts and fitness can vary between runs; use the detailed 
 
 ## Assignment 4: Artificial Life
 
-Artificial Life materials are isolated on the `assignment-4-alife` branch:
+Artificial Life materials are kept in the course repository on `main`:
 
 - assignment brief: `assignment/Assignment 4/AML Assignment 04 ALife 2026.pdf`
 - lecture files: `lecture/Lecture 3_Artificial Life/`
 - PySimbot workspace: `asm-4_PyLifeSimbot/` in the nested `cpe-aml` repository
 
-The GA branch `assignment-3-ga` and the course `main` branch do not contain
-these Assignment 4 files.
+The nested `cpe-aml` repository remains separate: its `assignment-3-ga` and
+`main` branches contain the GA workspace, while its `assignment-4-alife`
+branch contains `asm-4_PyLifeSimbot`. The root repository's `main` contains
+the course-level Assignment 4 brief and lecture materials listed above.
 
 ## Repository convention
 
