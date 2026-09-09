@@ -43,13 +43,14 @@ in the assignment example, keeps both child orientations, and retains the
 starter's 10% random-new (`MR_count`) group alongside 10% elitism. Fuzzy
 actions are normalized by active rule strength, and a deterministic sensor-based
 recovery handles blocked/zero-step moves. The food is treated as one fixed goal
-per generation: a robot stops after its centre enters the food rectangle and is
-aligned with the target for clear display while the other robots continue, so
-each robot can contribute at most one successful eat. Fitness also
-records the closest food distance reached during a run, while actual food
-contacts remain visible in `generation_stats.csv`. The controller clears
-PySimbot's geometry sensor caches between generations, preventing long-run
-memory growth. GA operators are
+per generation: a robot may leave the food rectangle and re-enter it, and each
+new entry counts as another successful eat. PySimbot's `just_eat` flag prevents
+the same stationary overlap from being counted once per frame. Fitness records
+the closest food distance and the repeat-eating contribution, while
+`generation_stats.csv` reports eater count, repeat-eater count, maximum entries
+by one robot, and total food contacts. The controller clears PySimbot's
+geometry sensor caches between generations, preventing long-run memory growth.
+GA operators are
 stochastic, so eater counts and fitness can vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-3-ga/asm-3_PyGASimbot/LOGIC_DESIGN.md) and
 `generation_stats.csv` to compare runs.
 
