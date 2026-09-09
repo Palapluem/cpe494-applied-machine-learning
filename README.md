@@ -42,9 +42,9 @@ The Assignment 3 controller now follows the complete 110-byte crossover shown
 in the assignment example and keeps both child orientations. The active
 video-aligned profile is population 100, 100 generations, 450 ticks, 8 elites,
 2 random immigrants, tournament size 4, crossover 0.80, mutation 0.010,
-`WEIGHT_EAT_TIME=5.0`, and `WEIGHT_COLLISION=1.5`. Fuzzy actions are
-normalized by active rule strength, and a deterministic sensor-based recovery
-handles blocked/zero-step moves. The food is treated as one fixed goal per
+`WEIGHT_EAT_TIME=5.0`, and `WEIGHT_COLLISION=1.5`. Fuzzy actions use the
+starter's firing-strength weighted sum, and a deterministic sensor-based
+recovery handles blocked/zero-step moves. The food is treated as one fixed goal per
 generation: a robot may leave the food rectangle and re-enter it, and each new
 entry counts as another successful eat. PySimbot's `just_eat` flag prevents the
 same stationary overlap from being counted once per frame. Fitness records the
