@@ -39,20 +39,24 @@ repository](https://github.com/Palapluem/cpe-aml), under
 on the `assignment-3-ga` branch.
 
 The Assignment 3 controller now follows the complete 110-byte crossover shown
-in the assignment example, keeps both child orientations, and retains the
-starter's 10% random-new (`MR_count`) group alongside 10% elitism. Fuzzy
-actions are normalized by active rule strength, and a deterministic sensor-based
-recovery handles blocked/zero-step moves. The food is treated as one fixed goal
-per generation: a robot may leave the food rectangle and re-enter it, and each
-new entry counts as another successful eat. PySimbot's `just_eat` flag prevents
-the same stationary overlap from being counted once per frame. Fitness records
-the closest food distance and the repeat-eating contribution, while
+in the assignment example and keeps both child orientations. The active
+video-aligned profile is population 100, 100 generations, 450 ticks, 8 elites,
+2 random immigrants, tournament size 4, crossover 0.80, mutation 0.010,
+`WEIGHT_EAT_TIME=5.0`, and `WEIGHT_COLLISION=1.5`. Fuzzy actions are
+normalized by active rule strength, and a deterministic sensor-based recovery
+handles blocked/zero-step moves. The food is treated as one fixed goal per
+generation: a robot may leave the food rectangle and re-enter it, and each new
+entry counts as another successful eat. PySimbot's `just_eat` flag prevents the
+same stationary overlap from being counted once per frame. Fitness records the
+closest food distance and the repeat-eating contribution, while
 `generation_stats.csv` reports eater count, repeat-eater count, maximum entries
 by one robot, and total food contacts. The controller clears PySimbot's
 geometry sensor caches between generations, preventing long-run memory growth.
 GA operators are
 stochastic, so eater counts and fitness can vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-3-ga/asm-3_PyGASimbot/LOGIC_DESIGN.md) and
 `generation_stats.csv` to compare runs.
+Set `PYSIMBOT_PLOT=1` and `PYSIMBOT_LIVE_PLOT=1` for the live red-best/blue-
+average learning curve beside the simulator, as shown in the supplied videos.
 
 ## Assignment 4: Artificial Life
 
