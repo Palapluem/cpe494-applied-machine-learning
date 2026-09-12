@@ -6,3 +6,16 @@
 
 # Temporary Microsoft Office lock files.
 ~$*
+
+# Python environments and generated runtime files.
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+*.pyo
+*.log
+kivy_logs/
+
+# Local macOS metadata.
+.DS_Store
