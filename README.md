@@ -103,8 +103,10 @@ directory. Assignment 3 writes generated CSV/PNG files under
 
 For short smoke runs, Assignment 1 and 2 accept `PYSIMBOT_MAX_TICK`, Assignment
 3 accepts `PYSIMBOT_TICKS` and `PYSIMBOT_GENERATIONS`, and Assignment 4 accepts
-`ALIFE_MAX_TICK`, `ALIFE_SEED`, and `ALIFE_AUTO_CLOSE`. These are test-only
-overrides; the submitted assignment defaults remain unchanged.
+`ALIFE_MAX_TICK`, `ALIFE_SEED`, `ALIFE_AUTO_CLOSE`, and
+`ALIFE_WINDOW_TICKS`. These are test-only overrides; the submitted assignment
+defaults remain unchanged. `ALIFE_WINDOW_TICKS` is useful when a short smoke
+run would otherwise contain fewer than one 5,000-tick result window.
 
 ## Verification
 
