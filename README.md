@@ -106,9 +106,10 @@ For short smoke runs, Assignment 1 and 2 accept `PYSIMBOT_MAX_TICK`, Assignment
 `ALIFE_MAX_TICK`, `ALIFE_SEED`, `ALIFE_AUTO_CLOSE`, and
 `ALIFE_WINDOW_TICKS`, `ALIFE_PARENT_SELECTION`, and
 `ALIFE_TOURNAMENT_SIZE`. These are test-only overrides; the submitted
-assignment defaults remain unchanged. `ALIFE_WINDOW_TICKS` is useful when a
-short smoke run would otherwise contain fewer than one 5,000-tick result
-window, while the parent-selection variables are for A/B/C experiments.
+assignment defaults remain unchanged, including uniform survivor-pair
+selection. `ALIFE_WINDOW_TICKS` is useful when a short smoke run would
+otherwise contain fewer than one 5,000-tick result window, while the
+parent-selection variables expose the A/B/C experiment modes.
 
 ## Verification
 
