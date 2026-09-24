@@ -103,16 +103,13 @@ directory. Assignment 3 writes generated CSV/PNG files under
 
 For short smoke runs, Assignment 1 and 2 accept `PYSIMBOT_MAX_TICK`, Assignment
 3 accepts `PYSIMBOT_TICKS` and `PYSIMBOT_GENERATIONS`, and Assignment 4 accepts
-`ALIFE_MAX_TICK`, `ALIFE_SEED`, `ALIFE_AUTO_CLOSE`, and
-`ALIFE_WINDOW_TICKS`, `ALIFE_PARENT_SELECTION`, and
-`ALIFE_TOURNAMENT_SIZE`, plus the experiment-only
-`ALIFE_MUTATION_RATE` and `ALIFE_RANDOM_NEWBORN_RATE`. These are test-only
-overrides; the submitted assignment defaults remain unchanged, including
-energy-ranked top-25% random-parent selection, mutation `0.01`, and random
-newborn `0.02`.
+`ALIFE_MAX_TICK`, `ALIFE_SEED`, `ALIFE_AUTO_CLOSE`, `ALIFE_WINDOW_TICKS`,
+`ALIFE_TICKS_PER_FRAME`, and experiment switches for selection, crossover,
+mutation, energy costs/reward, and maximum energy. The submitted A4 defaults
+remain energy-ranked top-25% random-parent selection, single-point crossover,
+per-gene mutation `0.009`, and random newborn `0.02`.
 `ALIFE_WINDOW_TICKS` is useful when a short smoke run would otherwise contain
-fewer than one 5,000-tick result window, while the parent-selection and rate
-variables expose controlled experiments.
+fewer than one 5,000-tick result window.
 
 ## Verification
 
