@@ -107,7 +107,10 @@ For short smoke runs, Assignment 1 and 2 accept `PYSIMBOT_MAX_TICK`, Assignment
 `ALIFE_TICKS_PER_FRAME`, and experiment switches for selection, crossover,
 mutation, energy costs/reward, and maximum energy. The submitted A4 defaults
 remain energy-ranked top-25% random-parent selection, single-point crossover,
-per-gene mutation `0.009`, and random newborn `0.02`.
+per-gene mutation `0.009`, and random newborn `0.05`. The nested repository's
+[A4 submission parameter sheet](https://github.com/Palapluem/cpe-aml/blob/assignment-4-alife/asm-4_PyLifeSimbot/SUBMISSION_PARAMETERS.md)
+separates assignment requirements from selected implementation settings and
+summarizes the latest controlled tests.
 `ALIFE_WINDOW_TICKS` is useful when a short smoke run would otherwise contain
 fewer than one 5,000-tick result window.
 
