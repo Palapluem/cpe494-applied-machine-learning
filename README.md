@@ -104,13 +104,18 @@ directory. Assignment 3 writes generated CSV/PNG files under
 For short smoke runs, Assignment 1 and 2 accept `PYSIMBOT_MAX_TICK`, Assignment
 3 accepts `PYSIMBOT_TICKS` and `PYSIMBOT_GENERATIONS`, and Assignment 4 accepts
 `ALIFE_MAX_TICK`, `ALIFE_SEED`, `ALIFE_AUTO_CLOSE`, `ALIFE_WINDOW_TICKS`,
-`ALIFE_TICKS_PER_FRAME`, and experiment switches for selection, crossover,
-mutation, energy costs/reward, and maximum energy. The submitted A4 defaults
-remain energy-ranked top-25% random-parent selection, single-point crossover,
-per-gene mutation `0.009`, and random newborn `0.05`. The nested repository's
+`ALIFE_TICKS_PER_FRAME`, `ALIFE_OUTPUT_DIR`, `ALIFE_PLOT_SNAPSHOT_INTERVAL`,
+and experiment switches for selection, crossover, mutation, energy costs/reward,
+and maximum energy. The current A4 preset is energy-ranked top-25% random-parent
+selection, single-point crossover, per-gene mutation `0.015`, and random newborn
+`0.05`. A matched 100,000-tick seed-42 test recorded 5,441 deaths and 16,714
+foods at this setting, best among the three tested mutation rates. The nested repository's
 [A4 submission parameter sheet](https://github.com/Palapluem/cpe-aml/blob/assignment-4-alife/asm-4_PyLifeSimbot/SUBMISSION_PARAMETERS.md)
 separates assignment requirements from selected implementation settings and
-summarizes the latest controlled tests.
+summarizes the latest controlled tests, including the three-seed screen and
+full-run comparison. Assignment 4 also opens a separate live learning chart;
+set `ALIFE_OUTPUT_DIR` to keep its result CSV/PNG files outside the repository,
+and `ALIFE_PLOT_SNAPSHOT_INTERVAL=25000` to save chart snapshots during a run.
 `ALIFE_WINDOW_TICKS` is useful when a short smoke run would otherwise contain
 fewer than one 5,000-tick result window.
 
