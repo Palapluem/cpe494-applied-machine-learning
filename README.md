@@ -10,10 +10,12 @@ Course workspace for **CPE494 Special Topic IV: Applied Machine Learning** (Seme
 | `assignment/Assignment 2/` | Fuzzy Logic Control (FLC) brief and hint image. |
 | `assignment/Assignment 3/` | Genetic Algorithm (GA) assignment brief. |
 | `assignment/Assignment 4/` | Artificial Life assignment brief (kept on root `main`). |
+| `assignment/Assignment 5/` | Assignment 5 status and links; official brief not yet provided. |
 | `assignment/cpe-aml/` | Separate fork of the group-assignment repository; intentionally kept as its own Git repository. |
 | `lecture/Lecture 1_Fuzzy Logic Control/` | Fuzzy-control lecture notes, exercises, and solution references. |
 | `lecture/Lecture 2_Genetic Algorithm/` | Genetic Algorithm lecture notes and reference slides. |
 | `lecture/Lecture 3_Artificial Life/` | Artificial Life lecture notes and slides (kept on root `main`). |
+| `lecture/Lecture 4_Introduction to Neural Networks/` | ANN lecture slides, PDF export, and a sample ANN exercise. |
 | `tmp/pdfs/` | Local preview images extracted while reviewing PDFs; generated previews are ignored. |
 
 ## Cross-platform migration setup
@@ -31,7 +33,7 @@ New-Item -ItemType Directory -Force D:\Developer | Out-Null
 Set-Location D:\Developer
 git clone --branch main --single-branch https://github.com/Palapluem/cpe494-applied-machine-learning.git
 Set-Location .\cpe494-applied-machine-learning
-git clone --branch assignment-4-alife --single-branch https://github.com/Palapluem/cpe-aml.git .\assignment\cpe-aml
+git clone --branch main --single-branch https://github.com/Palapluem/cpe-aml.git .\assignment\cpe-aml
 
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -54,7 +56,7 @@ mkdir -p ~/Developer
 cd ~/Developer
 git clone --branch main --single-branch https://github.com/Palapluem/cpe494-applied-machine-learning.git
 cd cpe494-applied-machine-learning
-git clone --branch assignment-4-alife --single-branch https://github.com/Palapluem/cpe-aml.git assignment/cpe-aml
+git clone --branch main --single-branch https://github.com/Palapluem/cpe-aml.git assignment/cpe-aml
 
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -107,13 +109,11 @@ For short smoke runs, Assignment 1 and 2 accept `PYSIMBOT_MAX_TICK`, Assignment
 `ALIFE_TICKS_PER_FRAME`, `ALIFE_OUTPUT_DIR`, `ALIFE_PLOT_SNAPSHOT_INTERVAL`,
 and experiment switches for selection, crossover, mutation, energy costs/reward,
 and maximum energy. The current A4 preset is energy-ranked top-25% random-parent
-selection, single-point crossover, per-gene mutation `0.015`, and random newborn
-`0.05`. A matched 100,000-tick seed-42 test recorded 5,441 deaths and 16,714
-foods at this setting, best among the three tested mutation rates. The nested repository's
-[A4 submission parameter sheet](https://github.com/Palapluem/cpe-aml/blob/assignment-4-alife/asm-4_PyLifeSimbot/SUBMISSION_PARAMETERS.md)
-separates assignment requirements from selected implementation settings and
-summarizes the latest controlled tests, including the three-seed screen and
-full-run comparison. Assignment 4 also opens a separate live learning chart;
+selection, single-point crossover, per-gene mutation `0.020`, and random newborn
+`0.05`. The test history, parameter rationale, and caveats are in the nested
+repository's [A4 submission parameter sheet](https://github.com/Palapluem/cpe-aml/blob/main/asm-4_PyLifeSimbot/SUBMISSION_PARAMETERS.md);
+earlier single-run results in archived notes are not the latest comparison.
+Assignment 4 also opens a separate live learning chart;
 set `ALIFE_OUTPUT_DIR` to keep its result CSV/PNG files outside the repository,
 and `ALIFE_PLOT_SNAPSHOT_INTERVAL=25000` to save chart snapshots during a run.
 `ALIFE_WINDOW_TICKS` is useful when a short smoke run would otherwise contain
@@ -146,7 +146,7 @@ The controller is deterministic: it uses the eight infrared sensors and food sme
 
 The Assignment 2 brief and hint are in [Assignment 2](<assignment/Assignment 2/>). The related lecture examples and solution references are in [Lecture 1: Fuzzy Logic Control](<lecture/Lecture 1_Fuzzy Logic Control/>).
 
-The current implementation is maintained in the separate [cpe-aml repository](https://github.com/Palapluem/cpe-aml), under [`asm-2_PySimbot/`](https://github.com/Palapluem/cpe-aml/tree/assignment-4-alife/asm-2_PySimbot) on the `assignment-4-alife` branch. It follows the assignment hint with deterministic fuzzification, rule firing, defuzzification, state logging, and loop/stuck recovery.
+The current implementation is maintained in the separate [cpe-aml repository](https://github.com/Palapluem/cpe-aml), under [`asm-2_PySimbot/`](https://github.com/Palapluem/cpe-aml/tree/main/asm-2_PySimbot) on `main`. It follows the assignment hint with deterministic fuzzification, rule firing, defuzzification, state logging, and loop/stuck recovery.
 
 ## Assignment 3: Genetic Algorithm
 
@@ -155,13 +155,13 @@ supporting material is in [Lecture 2: Genetic Algorithm](<lecture/Lecture 2_Gene
 
 The current PySimbot starter is maintained in the separate [cpe-aml
 repository](https://github.com/Palapluem/cpe-aml), under
-[`asm-3_PyGASimbot/`](https://github.com/Palapluem/cpe-aml/tree/assignment-4-alife/asm-3_PyGASimbot)
-on the `assignment-4-alife` branch.
+[`asm-3_PyGASimbot/`](https://github.com/Palapluem/cpe-aml/tree/main/asm-3_PyGASimbot)
+on `main`.
 
 The Assignment 3 controller keeps the complete 110-byte chromosome crossover,
 the branch's GA parameter set, deterministic blocked-move recovery, and
 repeat-eating statistics. GA operators are stochastic, so eater counts and
-fitness vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/assignment-4-alife/asm-3_PyGASimbot/LOGIC_DESIGN.md)
+fitness vary between runs; use the detailed [Assignment 3 logic design](https://github.com/Palapluem/cpe-aml/blob/main/asm-3_PyGASimbot/LOGIC_DESIGN.md)
 and `generation_stats.csv` to compare runs. Set `PYSIMBOT_PLOT=1` and
 `PYSIMBOT_LIVE_PLOT=1` for the live red-best/blue-average learning curve
 beside the simulator, as shown in the supplied videos.
@@ -174,10 +174,10 @@ Artificial Life materials are kept in the course repository on `main`:
 - lecture files: `lecture/Lecture 3_Artificial Life/`
 - PySimbot workspace: `asm-4_PyLifeSimbot/` in the nested `cpe-aml` repository
 
-The nested `cpe-aml` repository remains separate: its `assignment-3-ga` and
-`main` branches contain the GA workspace, while its `assignment-4-alife`
-branch contains `asm-4_PyLifeSimbot`. The root repository's `main` contains
-the course-level Assignment 4 brief and lecture materials listed above.
+The nested `cpe-aml` repository remains separate and its `main` branch contains
+the shared A1-A4 baseline. Assignment-specific work is kept on a feature branch;
+the new ANN starter is on `assignment-5-ann`. The root repository's `main`
+contains the course-level Assignment 4 brief and lecture materials listed above.
 
 The Assignment 4 entry point is `asm-4_PyLifeSimbot/assignmentALife.py` in the
 nested repository. With the nested repository's own `.venv` activated, install
@@ -211,3 +211,15 @@ repository cannot silently modify the other.
 - Keep lecture materials and course-level files in this repository.
 - Keep group-assignment source, dependencies, and assignment-specific history inside `assignment/cpe-aml/`.
 - Run and submit the PySimbot work through `Assignment RC.py`, not the removed `run.py` script.
+
+## Assignment 5: Artificial Neural Networks
+
+The Lecture 4 slides and a sample ANN exam exercise are in
+[`Lecture 4: Introduction to Neural Networks`](<lecture/Lecture 4_Introduction to Neural Networks/>).
+The sample exercise is lecture material, not the Assignment 5 specification.
+As of 2026-09-30, no official Assignment 5 handout has been added; see the
+[status note](<assignment/Assignment 5/README.md>). The provided PyNNSimbot
+starter is kept in the separate `cpe-aml` repository on its
+[`assignment-5-ann` branch](https://github.com/Palapluem/cpe-aml/tree/assignment-5-ann/asm-5_PyNNSimbot).
+No assignment requirements or final controller behavior are inferred from the
+starter before the handout is available.
