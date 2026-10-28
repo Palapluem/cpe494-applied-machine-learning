@@ -10,12 +10,13 @@ Course workspace for **CPE494 Special Topic IV: Applied Machine Learning** (Seme
 | `assignment/Assignment 2/` | Fuzzy Logic Control (FLC) brief and hint image. |
 | `assignment/Assignment 3/` | Genetic Algorithm (GA) assignment brief. |
 | `assignment/Assignment 4/` | Artificial Life assignment brief (kept on root `main`). |
-| `assignment/Assignment 5/` | Assignment 5 status and links; official brief not yet provided. |
+| `assignment/Assignment 5/` | Official Artificial Neural Networks (ANN) assignment brief and starter links. |
 | `assignment/cpe-aml/` | Separate fork of the group-assignment repository; intentionally kept as its own Git repository. |
 | `lecture/Lecture 1_Fuzzy Logic Control/` | Fuzzy-control lecture notes, exercises, and solution references. |
 | `lecture/Lecture 2_Genetic Algorithm/` | Genetic Algorithm lecture notes and reference slides. |
 | `lecture/Lecture 3_Artificial Life/` | Artificial Life lecture notes and slides (kept on root `main`). |
 | `lecture/Lecture 4_Introduction to Neural Networks/` | ANN lecture slides, PDF export, and a sample ANN exercise. |
+| `lecture/Lecture 5_Decision Making/` | Decision-making under uncertainty slides and spreadsheet exercises. |
 | `tmp/pdfs/` | Local preview images extracted while reviewing PDFs; generated previews are ignored. |
 
 ## Cross-platform migration setup
@@ -214,12 +215,27 @@ repository cannot silently modify the other.
 
 ## Assignment 5: Artificial Neural Networks
 
-The Lecture 4 slides and a sample ANN exam exercise are in
-[`Lecture 4: Introduction to Neural Networks`](<lecture/Lecture 4_Introduction to Neural Networks/>).
-The sample exercise is lecture material, not the Assignment 5 specification.
-As of 2026-09-30, no official Assignment 5 handout has been added; see the
-[status note](<assignment/Assignment 5/README.md>). The provided PyNNSimbot
-starter is kept in the separate `cpe-aml` repository on its
+The official brief is [AML Assignment 05 ANN 2026.pdf](<assignment/Assignment 5/AML Assignment 05 ANN 2026.pdf>).
+Lecture 4 materials are in
+[`Lecture 4: Introduction to Neural Networks`](<lecture/Lecture 4_Introduction to Neural Networks/>);
+Lecture 5 slides and spreadsheet exercises are in
+[`Lecture 5: Decision Making Under Uncertainty`](<lecture/Lecture 5_Decision Making/>).
+The ANN exam example in Lecture 4 is lecture material, separate from the
+Assignment 5 specification.
+
+The assignment asks students to collect demonstration data, train an ANN from
+the 9 sensor inputs (8 IR readings and smell angle) to 2 movement outputs
+(turn and move), then evaluate the controller in PyNNSimbot. The supplied
+starter is in the separate fork on the
 [`assignment-5-ann` branch](https://github.com/Palapluem/cpe-aml/tree/assignment-5-ann/asm-5_PyNNSimbot).
-No assignment requirements or final controller behavior are inferred from the
-starter before the handout is available.
+Its README records hand-off filename mismatches against the official brief;
+the starter scripts have not been changed as part of adding these course
+materials.
+
+If the nested clone is currently on `main`, check out the ANN starter branch:
+
+```bash
+cd assignment/cpe-aml
+git fetch origin refs/heads/assignment-5-ann:refs/remotes/origin/assignment-5-ann
+git switch --track -c assignment-5-ann origin/assignment-5-ann
+```
