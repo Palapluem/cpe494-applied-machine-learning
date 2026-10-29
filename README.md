@@ -228,9 +228,14 @@ the 9 sensor inputs (8 IR readings and smell angle) to 2 movement outputs
 (turn and move), then evaluate the controller in PyNNSimbot. The supplied
 starter is in the separate fork on the
 [`assignment-5-ann` branch](https://github.com/Palapluem/cpe-aml/tree/assignment-5-ann/asm-5_PyNNSimbot).
-Its README records hand-off filename mismatches against the official brief;
-the starter scripts have not been changed as part of adding these course
-materials.
+The fork now provides collection, corrected scaling/filenames, training with
+episode holdout and measured simulator evaluation. Its
+[Assignment 5 guide](https://github.com/Palapluem/cpe-aml/blob/assignment-5-ann/asm-5_PyNNSimbot/README.md)
+includes reproducible commands and results.
+
+The instructor requires modified Python sources only for submission. Keep
+datasets/model weights local for a possible TA request; post the clip and
+learning graph to the FB group separately.
 
 If the nested clone is currently on `main`, check out the ANN starter branch:
 
