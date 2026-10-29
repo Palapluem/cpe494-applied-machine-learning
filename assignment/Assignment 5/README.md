@@ -24,6 +24,12 @@ episode holdout, simulator evaluation and learning curves. Reproduction
 commands and measured results are in its
 [experiment record](https://github.com/Palapluem/cpe-aml/blob/assignment-5-ann/asm-5_PyNNSimbot/EXPERIMENTS.md).
 
+The subsequent [research and improvement report](https://github.com/Palapluem/cpe-aml/blob/assignment-5-ann/asm-5_PyNNSimbot/RESEARCH_IMPROVEMENTS.md)
+compares corrective data, noise, model capacity, weighting and Dense-head
+calibration. A fresh 30-seed paired benchmark improves mean food 129.60 -> 140.67
+and collisions 34.73 -> 28.13, with uncertainty and failed runs included.
+The original result is retained separately rather than compared across seed sets.
+
 ## Instructor's submission update
 
 Submit only modified Python files. Do not submit CSV/history datasets or large

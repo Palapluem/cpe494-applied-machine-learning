@@ -233,6 +233,12 @@ episode holdout and measured simulator evaluation. Its
 [Assignment 5 guide](https://github.com/Palapluem/cpe-aml/blob/assignment-5-ann/asm-5_PyNNSimbot/README.md)
 includes reproducible commands and results.
 
+The [ANN research report](https://github.com/Palapluem/cpe-aml/blob/assignment-5-ann/asm-5_PyNNSimbot/RESEARCH_IMPROVEMENTS.md)
+records eight primary papers, failed ablations, a model frozen before final
+testing, and 30 fresh paired episodes. On the same seeds, mean food improved
+from 129.60 to 140.67 and collisions fell from 34.73 to 28.13. The separate
+randomized-start food result is inconclusive; results are specific to this map.
+
 The instructor requires modified Python sources only for submission. Keep
 datasets/model weights local for a possible TA request; post the clip and
 learning graph to the FB group separately.
