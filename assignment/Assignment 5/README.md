@@ -30,6 +30,14 @@ calibration. A fresh 30-seed paired benchmark improves mean food 129.60 -> 140.6
 and collisions 34.73 -> 28.13, with uncertainty and failed runs included.
 The original result is retained separately rather than compared across seed sets.
 
+The later [ANN robustness study](https://github.com/Palapluem/cpe-aml/blob/assignment-5-ann/asm-5_PyNNSimbot/ANN_ROBUSTNESS_REPORT.md)
+adds data-conflict safeguards, independent transition/H5 verification and five
+training-RNG replicas. It includes 40 training fits and 624 native 5,000-tick
+episodes. No selected candidate passes confirmation guardrails for both normal
+and randomized starts, so the delivered default remains and the newly reserved
+final scenes are still unused. Genuine human demonstration data remain an
+explicit gap; the fork includes a collection guide and a bundle of 21 Python files.
+
 ## Instructor's submission update
 
 Submit only modified Python files. Do not submit CSV/history datasets or large
