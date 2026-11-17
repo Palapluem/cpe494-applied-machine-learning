@@ -11,19 +11,24 @@ Course workspace for **CPE494 Special Topic IV: Applied Machine Learning** (Seme
 | `assignment/Assignment 3/` | Genetic Algorithm (GA) assignment brief. |
 | `assignment/Assignment 4/` | Artificial Life assignment brief (kept on root `main`). |
 | `assignment/Assignment 5/` | Official Artificial Neural Networks (ANN) assignment brief and starter links. |
+| `assignment/Assignment 6/` | Reinforcement Learning assignment brief and original starter. |
+| `assignment/Assignment 7/` | Naïve Bayes assignment brief and starter-branch link. |
 | `assignment/cpe-aml/` | Separate fork of the group-assignment repository; intentionally kept as its own Git repository. |
 | `lecture/Lecture 1_Fuzzy Logic Control/` | Fuzzy-control lecture notes, exercises, and solution references. |
 | `lecture/Lecture 2_Genetic Algorithm/` | Genetic Algorithm lecture notes and reference slides. |
 | `lecture/Lecture 3_Artificial Life/` | Artificial Life lecture notes and slides (kept on root `main`). |
 | `lecture/Lecture 4_Introduction to Neural Networks/` | ANN lecture slides, PDF export, and a sample ANN exercise. |
 | `lecture/Lecture 5_Decision Making/` | Decision-making under uncertainty slides and spreadsheet exercises. |
+| `lecture/Lecture 6_Reinforcement Learning/` | Q-learning lecture notes, examples, and PDF exports. |
+| `lecture/Lecture 7_Naïve Bayes Classifier/` | Naïve Bayes lecture PDF and PowerPoint. |
 | `tmp/pdfs/` | Local preview images extracted while reviewing PDFs; generated previews are ignored. |
 
 ## Cross-platform migration setup
 
 The course materials and runnable assignment code are intentionally kept in
-two independent repositories. Clone the public course repository first, then
-clone the private group repository into its ignored nested path. Do not copy a
+two independent repositories. Clone the course repository first, then clone
+the private group repository on the assignment branch you are working on. The
+commands below start the nested repository on `assignment-7-nb`. Do not copy a
 Windows `.venv` to macOS; create one fresh environment at the root of each
 repository.
 
@@ -34,7 +39,7 @@ New-Item -ItemType Directory -Force D:\Developer | Out-Null
 Set-Location D:\Developer
 git clone --branch main --single-branch https://github.com/Palapluem/cpe494-applied-machine-learning.git
 Set-Location .\cpe494-applied-machine-learning
-git clone --branch main --single-branch https://github.com/Palapluem/cpe-aml.git .\assignment\cpe-aml
+git clone --branch assignment-7-nb --single-branch https://github.com/Palapluem/cpe-aml.git .\assignment\cpe-aml
 
 py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
@@ -57,7 +62,7 @@ mkdir -p ~/Developer
 cd ~/Developer
 git clone --branch main --single-branch https://github.com/Palapluem/cpe494-applied-machine-learning.git
 cd cpe494-applied-machine-learning
-git clone --branch main --single-branch https://github.com/Palapluem/cpe-aml.git assignment/cpe-aml
+git clone --branch assignment-7-nb --single-branch https://github.com/Palapluem/cpe-aml.git assignment/cpe-aml
 
 python3.11 -m venv .venv
 source .venv/bin/activate
@@ -243,10 +248,30 @@ The instructor requires modified Python sources only for submission. Keep
 datasets/model weights local for a possible TA request; post the clip and
 learning graph to the FB group separately.
 
-If the nested clone is currently on `main`, check out the ANN starter branch:
+When working on Assignment 5, switch the nested clone to its ANN branch:
 
 ```bash
 cd assignment/cpe-aml
 git fetch origin refs/heads/assignment-5-ann:refs/remotes/origin/assignment-5-ann
 git switch --track -c assignment-5-ann origin/assignment-5-ann
 ```
+
+## Assignment 6: Reinforcement Learning
+
+The [Assignment 6 brief and starter](<assignment/Assignment 6/>) are kept in
+this repository; Lecture 6 PDFs are in
+[`Lecture 6: Reinforcement Learning`](<lecture/Lecture 6_Reinforcement Learning/>).
+The runnable implementation, Eat/Hit graph, and validation report are on the
+[`assignment-6-rl` branch](https://github.com/Palapluem/cpe-aml/tree/assignment-6-rl/asm-6_PyRLSimbot).
+See the [Assignment 6 guide](<assignment/Assignment 6/README.md>) for the
+parameter check and run details.
+
+## Assignment 7: Naïve Bayes
+
+The [Assignment 7 brief and numbering note](<assignment/Assignment 7/>) are
+kept here, and Lecture 7 materials are in
+[`Lecture 7: Naïve Bayes Classifier`](<lecture/Lecture 7_Naïve Bayes Classifier/>).
+The starter package is on the separate
+[`assignment-7-nb` branch](https://github.com/Palapluem/cpe-aml/tree/assignment-7-nb/asm-7_PyNBSimbot).
+That branch contains the supplied PyNBSimbot starter; the Naïve Bayes
+controller is still to be implemented.
