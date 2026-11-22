@@ -9,7 +9,7 @@ graphs are maintained separately in the `assignment-6-rl` branch of the
 
 - `AML Assignment 06 RL 2026.pdf` — assignment brief.
 - `Assignment 6 (to start with).py.txt` — original starter, kept unchanged.
-- `../lecture/Lecture 6_Reinforcement Learning/` — lecture source material.
+- `../../lecture/Lecture 6_Reinforcement Learning/` — lecture source material.
   The PDFs were used as the course reference.
 
 ## Selected controller
@@ -54,10 +54,11 @@ rate at zero actions is undefined. The axes show events per action, with no
 smoothing. The training graph records the earlier training run that produced
 the selected Q-table.
 
-- [Final frozen-policy graph](../cpe-aml/asm-6_PyRLSimbot/assets/final_policy_eat_hit_rates.png)
-- [Online training graph](../cpe-aml/asm-6_PyRLSimbot/assets/single_run_eat_hit_rates.png)
-- [Full evaluation report](../cpe-aml/asm-6_PyRLSimbot/EXAMPLE6_OPTIMIZATION.md)
-- [Review evidence](../cpe-aml/asm-6_PyRLSimbot/evidence/review/)
+- [Submission settings and results](https://github.com/N0TAW00D/cpe-aml/blob/main/asm-6_PyRLSimbot/SUBMISSION.md)
+- [Final frozen-policy graph](https://github.com/N0TAW00D/cpe-aml/blob/main/asm-6_PyRLSimbot/assets/final_policy_eat_hit_rates.png)
+- [Online training graph](https://github.com/N0TAW00D/cpe-aml/blob/main/asm-6_PyRLSimbot/assets/single_run_eat_hit_rates.png)
+- [Full evaluation report](https://github.com/N0TAW00D/cpe-aml/blob/main/asm-6_PyRLSimbot/EXAMPLE6_OPTIMIZATION.md)
+- [Review evidence](https://github.com/N0TAW00D/cpe-aml/tree/main/asm-6_PyRLSimbot/evidence/review)
 
 The single-run graph illustrates one run. The earlier 60-scene result in the
 report used the previous filter. Example 6's clip uses different scenes and
