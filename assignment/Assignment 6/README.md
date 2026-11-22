@@ -26,38 +26,42 @@ The Q-learning update keeps the assignment's α = 0.5 and γ = 0.9.
 | Actions | Forward, left, right, backward; backward is an implementation choice beyond the brief's three-action example |
 | Main event rewards | Eat +15; blocked move −10 |
 | Evaluation exploration | ε = 0.15, using non-greedy actions when available |
-| Safety handling | Sensor-based margin 4.5 units; four recovery turns after a blocked move |
+| Safety handling | Sensor-based margin 4.5 units; a near-corner guard; four recovery turns after a blocked move |
 
-The directional reward terms from Example 6 are computed from the robot's
-binned sensor readings. The policy is frozen during evaluation. The safety
-filter uses the same existing distance sensors and does not read hidden food
-coordinates.
+The contextual reward terms from Example 6 use the robot's sensor readings and
+action. They are hand-designed guidance, while food and collision rewards use
+observed events. The policy is frozen during evaluation. The safety filter uses
+the existing distance sensors and does not read hidden food coordinates.
 
 ## Results and graphs
 
-The instructor's latest targets are Eat > 0.005 and Hit < 0.002, with rates
-defined as event counts per 1,000 actions. A paired final evaluation used 60
-held-out scenes for each start type and 5,000 actions per scene:
+The instructor's latest targets are Eat > 0.005 and Hit < 0.002 events per
+action, equivalent to Eat > 5 and Hit < 2 per 1,000 actions. After the corner
+fix, a paired check used 20 new scenes for each start type and 5,000 actions
+per scene:
 
-| Start | Eat / 1,000 actions (95% CI) | Hit / 1,000 actions (95% CI) |
+| Start | Eat / 1,000 actions | Hit / 1,000 actions |
 | --- | ---: | ---: |
-| Official | 8.743 (8.473–9.020) | 0.103 (0.063–0.153) |
-| Random | 8.880 (8.587–9.170) | 0.103 (0.067–0.143) |
+| Official | 8.38 | 0.04 |
+| Random | 8.48 | 0.07 |
 
-The final policy graph is a separate 100,000-tick trace: 842 foods and 10
-blocked moves, or Eat 8.420 and Hit 0.100 per 1,000 ticks. Both graphs begin at
-(0, 0), then show measured cumulative rates every 1,000 ticks; the rate axes
-are raw counts divided by elapsed actions, shown to three decimals, with no
-smoothing.
+The fix addresses two known corner cases; its comparison with the old filter
+has trade-offs and does not establish a general performance gain. The final
+policy graph is a separate 100,000-tick trace: 856 foods and 10 blocked moves,
+or Eat 8.560 and Hit 0.100 per 1,000 ticks. Both graphs mark (0, 0) as a
+display reference, then show measured cumulative rates every 1,000 ticks; a
+rate at zero actions is undefined. The axes show events per action, with no
+smoothing. The training graph records the earlier training run that produced
+the selected Q-table.
 
 - [Final frozen-policy graph](../cpe-aml/asm-6_PyRLSimbot/assets/final_policy_eat_hit_rates.png)
 - [Online training graph](../cpe-aml/asm-6_PyRLSimbot/assets/single_run_eat_hit_rates.png)
 - [Full evaluation report](../cpe-aml/asm-6_PyRLSimbot/EXAMPLE6_OPTIMIZATION.md)
-- [Protocol and earlier comparisons](../cpe-aml/asm-6_PyRLSimbot/RATE_TARGET_STUDY.md)
+- [Review evidence](../cpe-aml/asm-6_PyRLSimbot/evidence/review/)
 
-The single-run graph illustrates one run; the multi-scene evaluation is the
-main performance estimate. Example 6's clip uses different scenes and seeds,
-so its endpoint is a visual reference rather than a controlled comparison.
+The single-run graph illustrates one run. The earlier 60-scene result in the
+report used the previous filter. Example 6's clip uses different scenes and
+seeds, so its endpoint is a visual reference rather than a controlled comparison.
 
 ## Running the selected policy
 
